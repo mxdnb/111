@@ -1,0 +1,34 @@
+# 大学生BMI计算程序
+print("欢迎使用BMI计算程序！")
+print("=" * 30)
+
+# 获取用户输入
+try:
+    height = float(input("请输入您的身高（单位：米，例如1.75）: "))
+    weight = float(input("请输入您的体重（单位：千克，例如65）: "))
+    
+    # 计算BMI
+    bmi = weight / (height ** 2)
+    
+    # 显示结果
+    print("\n您的BMI计算结果:")
+    print(f"身高: {height} 米")
+    print(f"体重: {weight} 千克")
+    print(f"BMI值: {bmi:.2f}")  # 保留两位小数
+    
+    # 根据BMI值给出健康建议
+    if bmi < 18.5:
+        print("您的体重偏轻，建议适当增加营养摄入。")
+    elif 18.5 <= bmi < 24:
+        print("您的体重在正常范围内，请保持健康生活习惯。")
+    elif 24 <= bmi < 28:
+        print("您的体重超重，建议适当控制饮食并加强锻炼。")
+    else:
+        print("您的体重属于肥胖范围，建议咨询医生或营养师制定健康计划。")
+        
+except ValueError:
+    print("输入错误，请确保输入的是数字！")
+except ZeroDivisionError:
+    print("身高不能为零，请重新输入正确的值！")
+
+print("\n感谢使用BMI计算程序！祝您健康！")
